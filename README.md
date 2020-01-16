@@ -14,7 +14,7 @@ And as OpenMage is a community project, these should be decided actively by the 
 * Fill in and edit the template with your own proposal.
 * Submit a PR to the repo
 
-* getting it merged by having 3 other supporters 
+* getting it merged by having 3 other supporters / If its at least 2 Months old, no strong arguments against it, Drafts can be merged by having 1 supporter among the ones with merge permissions
 * working on it, till it is ready to be proposed
 * getting it moved into proposed state again by having 3 supporters
 
