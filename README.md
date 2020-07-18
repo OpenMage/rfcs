@@ -28,7 +28,8 @@ And as OpenMage is a community project, these should be decided actively by the 
 
 # inspired by
 
-* nodeJS
+* nodeJS/Javascript
+  * https://github.com/vuejs/rfcs
   * https://github.com/npm/rfcs
   * https://github.com/yarnpkg/rfcs
 * Rust
