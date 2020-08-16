@@ -19,7 +19,27 @@ Its important to have a reliability for long term plans, we can offer this by fo
 
 {{Discuss 2-3 different alternative solutions that were considered. This is required, even if it seems like a stretch. Then explain why this is the best choice out of available ones.}}
 
-## Implementation
+### Alternative 1.1
+
+We will follow the Example of nginx.
+We will have two parallel Versions/Branches, *stable* and *mainline*, with new Major Releases every year.
+mainline will contain all the latest changes and additions, while stable is each year branched from mainline, and then only gets bugfix releases.
+
+
+#### Visualization of the nginx Release cycle
+
+![nginx release stragey visualized](../assets/nginx-release-strategy.png?raw=true "nginx release stragey visualized")
+
+### Alternative 1.2
+
+An additional *legazy* release branch, which provides support for the previous stable branch for ~1 more year.
+
+
+### Alternative 1.3
+
+same as previous ones, but with a different timeframe instead of a year. (not clearly defined yet)
+
+### Alternative 2
 
 We will follow the example of Ubuntu, which bases the Major Version Number on the Year.  
 And also has a specific Rythmus of an LTS version every 4 Releases,
@@ -28,6 +48,16 @@ adding bigger experimantal features in the Major Release after an LTS version.
 But we will go with just one Major Release each year, which results in one LTS Release every 4 years.
 
 
+#### Visualization of the Ubuntu Release cycle
+
+![ubuntu release stragey visualized](../assets/Ubuntu_release_cycle_Ubuntu.png?raw=true "ubuntu release stragey visualized")
+
+### Alternative 3
+
+Have one Minor Release each month, do Major Releases every time a BC break is part of the Release. Only one currently supported Branch.
+
+
+## Implementation
 
 {{Give a high-level overview of implementation requirements and concerns. Be specific about areas of code that need to change, and what their potential effects are. Discuss which repositories and sub-components will be affected, and what its overall code effect might be.}}
 
