@@ -16,8 +16,10 @@ When enough reviews are in, the merge should be automatic.
 
 ## Rationale and Alternatives
 
-
+There could be some alternatives:
+- having a maintainers meeting every few weeks, to have them all check some PRs during the meeting, but I think nobody will be able to attend those meetings because of timezones and other commitments.
+- having 1 maintainer and 2 users reviewing a PR instead of 1 maintainer and 1 user.
 
 ## Implementation
 
-It's just a matter of changing some project settings from the github settings page.
+It should be just a matter of changing some project settings from the project's settings page.
