@@ -20,4 +20,4 @@ When enough reviews are in, the merge should be automatic.
 
 ## Implementation
 
-It's just a matter of changing some project setting
+It's just a matter of changing some project settings from the github settings page.
