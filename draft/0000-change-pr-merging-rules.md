@@ -17,7 +17,6 @@ A new rule for PR approvation/merging will:
 
 ## Detailed Explanation
 
-TO BE REFINED, TWO OPTIONS:
 - Any contributor with at least 5 merged PRs becomes part of the "reviewers group".
 - If a PR has 2 positive reviews made by 2 maintainer it will be considered approved (actual situation).
 - If a PR has 1 positive review made by a maintainer and at least another one made by a person part of the "reviewers group" it will be considered approved.
