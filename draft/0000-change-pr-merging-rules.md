@@ -2,15 +2,25 @@
 
 ## Summary
 
-At the moment, for a PR to be merged, it needs to be reviewd by 2 project maintainers, but anyway no automatic merge is ever happening. Non-mainteiners can review a PR but it doesn't mean the PR will get approved.
+TDB
 
 ## Motivation
 
-OpenMage has >180 open PRs, while some of them should be closed (that's a topic for another RFC) this RFC is about speeding the process of PR apporval/merge, which feels too slow now.
+At the moment, for a PR to be merged, it needs to be reviewd by 2 project maintainers,  no automatic merge is ever happening. Non-mainteiners can review a PR but it doesn't mean the PR will get approved.
+
+OpenMage has >180 open PRs, while some of them should be closed (that's a topic for another RFC) but this RFC is about speeding the process of PR apporval/merge, which feels too slow now.
+
+A new rule for PR approvation/merging will:
+- speed up development
+- give contributors quicker feedback to engage them more
+- allow PRs to move quicker avoiding stagnat PRs
 
 ## Detailed Explanation
 
-The new process would consider a PR approved when at least 2 users review (approving) the PR, at least 1 (of the 2 approving reviews) has to be done by a maintainer.
+TO BE REFINED, TWO OPTIONS:
+- Any contributor with at least 5 merged PRs becomes part of the "reviewers group".
+- If a PR has 2 positive reviews made by 2 maintainer it will be considered approved (actual situation).
+- If a PR has 1 positive review made by a maintainer and at least another one made by a person part of the "reviewers group" it will be considered approved.
 
 When enough reviews are in, the merge should be automatic.
 
@@ -18,7 +28,7 @@ When enough reviews are in, the merge should be automatic.
 
 There could be some alternatives:
 - having a maintainers meeting every few weeks, to have them all check some PRs during the meeting, but I think nobody will be able to attend those meetings because of timezones and other commitments.
-- having 1 maintainer and 2 users reviewing a PR instead of 1 maintainer and 1 user.
+- allowing "normal" users to have more priviliges in approving PRs (eg: 2 users + 1 mantainer to approve a PR) but I feel that the "having 5 merged PRs" requirement is an important filter to avoid possible "noise" in the approval process by random people.
 
 ## Implementation
 
