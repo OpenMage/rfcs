@@ -23,6 +23,28 @@ A new rule for PR approvation/merging will:
 
 When enough reviews are in, the merge should be automatic.
 
+To get the list of contributors with more than 5 "contributions" I've written this PHP+curl script:
+```php
+$login = 'LOGIN';
+$password = 'ACCESSTOKEN';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0');
+curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/OpenMage/magento-lts/contributors');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
+$contributors = curl_exec($ch);
+curl_close($ch);
+$contributors = json_decode($contributors);
+
+foreach ($contributors as $contributor) {
+  if ($contributor->contributions < 5) continue;
+  echo "{$contributor->login} {$contributor->contributions}\n";
+}
+```
+
+At the moment of writing, this script generates a list of 28 users (some of them are already maintainers).
+
 ## Rationale and Alternatives
 
 There could be some alternatives:
