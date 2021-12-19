@@ -6,44 +6,24 @@ TDB
 
 ## Motivation
 
-At the moment, for a PR to be merged, it needs to be reviewd by 2 project maintainers,  no automatic merge is ever happening. Non-mainteiners can review a PR but it doesn't mean the PR will get approved.
+At the moment, for a PR to be merged, it needs to be reviewd by 2 project maintainers, no automatic merge is ever happening. Non-mainteiners can review a PR but it doesn't mean the PR will get approved.
 
-OpenMage has >180 open PRs, while some of them should be closed (that's a topic for another RFC) but this RFC is about speeding the process of PR apporval/merge, which feels too slow now.
+OpenMage has more than 190 open PRs. Some of them should be closed without merging (that's a topic for another RFC) but this RFC is about speeding the process of  apporval/merge, which feels too slow now.
 
 A new rule for PR approvation/merging will:
 - speed up development
 - give contributors quicker feedback to engage them more
 - allow PRs to move quicker avoiding stagnat PRs
+- hopefully make OpenMage better and more alive
 
 ## Detailed Explanation
 
-- Any contributor with at least 5 merged PRs becomes part of the "reviewers group".
-- If a PR has 2 positive reviews made by 2 maintainer it will be considered approved (actual situation).
-- If a PR has 1 positive review made by a maintainer and at least another one made by a person part of the "reviewers group" it will be considered approved.
+A PR should be considered as "approved" when:
+- has 2 positive reviews by 2 maintainers (2 green checks)
+- has 1 positive review by a maintainer and at 2 by normal users (1 green check + 2 gray checks)
+- has 4 positive reviews by normal users (4 gray checks)
 
-When enough reviews are in, the merge should be automatic.
 
-To get the list of contributors with more than 5 "contributions" I've written this PHP+curl script:
-```php
-$login = 'LOGIN';
-$password = 'ACCESSTOKEN';
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0');
-curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/OpenMage/magento-lts/contributors');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-curl_setopt($ch, CURLOPT_USERPWD, "$login:$password");
-$contributors = curl_exec($ch);
-curl_close($ch);
-$contributors = json_decode($contributors);
-
-foreach ($contributors as $contributor) {
-  if ($contributor->contributions < 5) continue;
-  echo "{$contributor->login} {$contributor->contributions}\n";
-}
-```
-
-At the moment of writing, this script generates a list of 28 users (some of them are already maintainers).
 
 ## Rationale and Alternatives
 
