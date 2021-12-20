@@ -110,6 +110,6 @@ foreach ($pull_requests as $pull_request) {
 and this is the output:  
 <img width="951" alt="Schermata 2021-12-20 alle 15 01 47" src="https://user-images.githubusercontent.com/909743/146787868-4d859c83-dd6c-4bf4-ad5c-283d2434b47b.png">
 
-Once hosted on a server, this page could also help users identify which PRs need a review to get approved and maybe make more people review code.
+Once hosted on a server, this page could also help users identify which PRs need a review to get approved and maybe make more people review code (which is needed anyway because most of the PRs wouldn't meed the new "merge ready" criteria anyway).
 
 I've temporary hosted the script on my server and it's available at this address: https://fabrizioballiano.com/om/pr_status.html (note:data should be updated every 6 hours).
