@@ -6,14 +6,14 @@ Speed up the process of accepting and merging PRs.
 
 ## Motivation
 
-At the moment, for a PR to be merged, it needs to be reviewd by 2 project maintainers, no automatic merge is ever happening. Non-mainteiners can review a PR but it doesn't mean the PR will get approved.
+At the moment, for a PR to be merged, it needs to be reviewed by 2 project maintainers, no automatic merge is ever happening. Non-maintainers can review a PR but it doesn't mean the PR will get approved.
 
-OpenMage has more than 190 open PRs. Some of them should be closed without merging (that's a topic for another RFC) but this RFC is about speeding the process of  apporval/merge, which feels too slow now.
+OpenMage has more than 190 open PRs. Some of them should be closed without merging (that's a topic for another RFC) but this RFC is about speeding the process of  approval/merge, which feels too slow now.
 
-A new rule for PR approvation/merging will:
+A new rule for PR approval/merging will:
 - speed up development
 - give contributors quicker feedback to engage them more
-- allow PRs to move quicker avoiding stagnat PRs
+- allow PRs to move quicker avoiding stagnant PRs
 - hopefully make OpenMage better and more alive
 
 ## Detailed Explanation
@@ -31,7 +31,7 @@ There could be some alternatives:
 
 ## Implementation
 
-I created a scripts that processes all PRs and all reviews and markes the PRs that meet the new requirements, so that it would be really easy for maintainers to identify the PRs that should be merged and merge them.
+I created a scripts that processes all PRs and all reviews and marks the PRs that meet the new requirements, so that it would be really easy for maintainers to identify the PRs that should be merged and merge them.
 
 This is the script:
 
