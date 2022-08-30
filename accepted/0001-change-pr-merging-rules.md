@@ -113,3 +113,21 @@ and this is the output:
 Once hosted on a server, this page could also help users identify which PRs need a review to get approved and maybe make more people review code (which is needed anyway because most of the PRs wouldn't meed the new "merge ready" criteria anyway).
 
 I've temporary hosted the script on my server and it's available at this address: https://fabrizioballiano.com/om/pr_status.html (note:data should be updated every 6 hours).
+
+## Notes
+
+Accepted via voting on https://github.com/OpenMage/rfcs/issues/5
+
+
+| **Name**         | **Yes** | **No** | **Comment**                                               |
+|------------------|:-------:|:------:|-----------------------------------------------------------|
+| kiatng           | ✔️      |        |                                                           |
+| ADDISON74        | ✔️      |        |                                                           |
+| Flyingmana       | ✔️      |        |                                                           |
+| f1-outsourcing   | ✔️      |        |                                                           |
+| elidrissidev     | ✔️      |        |                                                           |
+| luigifab         | ✔️      |        |                                                           |
+| tmotyl           | ✔️      |        | As long as the maintainer who merges stuff is responsible |
+| simbus82         | ✔️      |        |                                                           |
+| collinmollenhour | ✔️      |        | as long as the merge is happening by a maintainer         |
+
