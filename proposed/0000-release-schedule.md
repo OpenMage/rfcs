@@ -3,16 +3,16 @@
 ## Summary
 
 Defining the Schedule and rules for new releases
-{{A concise, one-paragraph description of the change.}}
 
 ## Motivation
 
 Its important to have a reliability for long term plans, we can offer this by following a consistent schedule with hard rules.
-{{Why are we doing this? What pain points does this resolve? What use cases does it support? What is the expected outcome? Use real, concrete examples to make your case!}}
+Different People/Users have different needs. This RFC allows to find a middleground, which satisfies all of our users, but also will show us, what our users actually need and want, providing a base for a decision which will be seen as good enough to not need a bigger change for at least a few years.
+With this RFC we then also have something to reference in case of future arguments about Releases and what gets into them.
 
 ## Detailed Explanation
 
-{{Describe the expected changes in detail, }}
+With this RFC we will define a basic scheme with rules by which we will do releases, have and create release branches, and also by which we decide what kind of changes get when merged into which release branch.
 
 ## Rationale and Alternatives
 
