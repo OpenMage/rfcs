@@ -18,13 +18,17 @@ We're now doing everything on v19 and forward port to v20.
 When v19 will reach EOL we'll find out that some of this work is not complete on v20, which may have more or less files that were not considered in thos PRs.
 So, with the current approach, our latest version is always the less polished.
 
+### 3.
+v19 should be the real LTS and it's for whom needs the most stable platform, it shouldn't change unless there's an extremely important reason for the change, like supporting a new PHP version (if the supported ones are EOL) or a security patch.
+At the moment we're trying to avoid breaking changes in v19 but >90% of the PRs are targeting v19, which is wrong.
+
 ## Detailed Explanation
 
 1. Rename branch `20.0` to `main`.
-2. Rename branch `1.9.4.x` to `v19`.
+2. Rename branch `1.9.4.x` to `v19.5.x` (since https://github.com/OpenMage/magento-lts/pull/2835 is merged).
 3. Make `main` the default branch.
 4. State that new PRs should be opened against `main` branch (unless absolutely necessary).
-5. Forbid maintainers and contributos (whoever can write to the `magento-lts` repository) from creating new branches, the only allowed branches should be `v19`, `main` and all the actively maintained branches that correspond to released version (eg: next year we free `v20` to its own branch and `main` represents `v21`) and remove all the branches that do not comply with this rule.
+5. Forbid maintainers and contributos (whoever can write to the `magento-lts` repository) from creating new branches, the only allowed branches should be `v19.5.x`, `main` and all the actively maintained branches that correspond to released version. All the branches that do not comply with this rule will be removed.
 
 ## Rationale and Alternatives
 
