@@ -1,4 +1,4 @@
-# 2022 update to naming and rules regarding branches in OpenMage
+# 2023 update to naming and rules regarding branches in OpenMage
 
 ## Summary
 
