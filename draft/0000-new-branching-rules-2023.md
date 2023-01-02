@@ -28,7 +28,7 @@ At the moment we're trying to avoid breaking changes in v19 but >90% of the PRs 
 2. Rename branch `1.9.4.x` to `v19.5.x` (since https://github.com/OpenMage/magento-lts/pull/2835 is merged).
 3. Make `main` the default branch.
 4. State that new PRs should be opened against `main` branch (unless absolutely necessary).
-5. Forbid maintainers and contributos (whoever can write to the `magento-lts` repository) from creating new branches, the only allowed branches should be `v19.5.x`, `main` and all the actively maintained branches that correspond to released version. All the branches that do not comply with this rule will be removed.
+5. Forbid maintainers and contributors (whoever can write to the `magento-lts` repository) from creating new branches, the only allowed branches should be `v19.5.x`, `main` and all the actively maintained branches that correspond to released version. All the branches that do not comply with this rule will be removed.
 
 ## Rationale and Alternatives
 
