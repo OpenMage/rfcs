@@ -8,7 +8,7 @@ Rename the active branches and change which one if the default.
 
 ### 1.
 Up to now differences between v19 and v20 were minor and the default branch was 1.9.4.x. Almost everything was committed to the 1.9.4.x and, at release time, forward ported to the 20.0 branch.
-This was ok for the first years of the project but I think it should be changed now in 2022.
+This was ok for the first years of the project but I think it should be changed now in 2023.
 Pushing the OpenMage development forward we need to promote v20 more and leave v19 behind (modified only for strictly necessary things).
 We also need a working version of the 20.0 branch at all times, now it could be outdated for weeks.
 
