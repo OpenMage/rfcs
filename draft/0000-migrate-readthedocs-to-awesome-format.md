@@ -20,7 +20,7 @@ Removing openmage.readthedocs.io we would also spare hosting costs/resources (wh
 
 **Why is people not contributing to openmage.readthedocs.io?**
 
-- since it looks like a website, you (as a contributor) think it's gonna be difficult to contribute, maybe I'll have to read some HTML code and respect certain formatting rules that I don't know, nmaybe github is not the right place because maybe the entries are stored in a database... this kind of psycological processes.
+- since it looks like a website, you (as a contributor) think it's gonna be difficult to contribute, maybe I'll have to read some HTML code and respect certain formatting rules that I don't know, maybe github is not the right place because maybe the entries are stored in a database... this kind of psycological processes.
 - In order to know what to modify when creating a PR, you've to go to https://github.com/OpenMage/documentation and understand the folder/file structure, which is not hard but for sure way harder than an "awesome" format. There's some python code, a .bat file, mixed stuff not everybody wants to read in order to understand how to contribute.
 
 ## Rationale and Alternatives
