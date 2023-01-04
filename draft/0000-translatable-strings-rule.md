@@ -31,6 +31,7 @@ Enless discussions create friction and I'm sure we want everything but that for 
 ### 1. Do not modify translatable strings in PHP files, only in CSV files
 
 **PRO**: It doesn't break language packs, which, important to re-state, we do not have control over.
+
 **CON**: It doesn't look as clean as option 2. Language packs will still be technically working but they may need a "refinement" update anyway.
 
 **Exception**: if changing a translatable string changes its meaning significantly, then this solution shouldn't be applied and the change should be considered a breaking change.
@@ -39,6 +40,7 @@ Example (extreme, for the sake of argument): changing "this product can be added
 ### 2. Keep translatable strings in sync between PHP and CSV files
 
 **PRO**: it is for sure nice to have all translatable strings in a coherent state, between PHP and CSV files.
+
 **CON**: Every change breaks all language packs.
 
 ## Implementation
