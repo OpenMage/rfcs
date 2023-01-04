@@ -5,7 +5,7 @@
 In OpenMage PHP files we've a lot of translatable strings, used to send messages to users, these strings and then translated though CSV files.
 
 What happens when we need to change one of these translatable strings (eg: because of a typo)?
-We need a clear rule for developers to follow in order to avoid re-discussiong the topic every time a PR involves a translatable string.
+We need a clear rule for developers to follow in order to avoid re-discussing the topic every time a PR involves a translatable string.
 
 ## Motivation
 
