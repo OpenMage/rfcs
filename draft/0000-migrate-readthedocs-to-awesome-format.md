@@ -32,3 +32,4 @@ There is an alternative, which is to work on the openmage.readthedocs.io reposit
 1. Since [this Awesome OpenMage](https://github.com/fballiano/awesome-openmage/) already exists (although it's far from being complete) my suggestion is to fork it under the OpenMage main account (in order to have it as github.com/OpenMage/awesome-openmage) and continue from there.
 2. Remove all the content from openmage.readthedocs.io and just implement a 301 redirect to the awesome-openmage repository.
 3. Link the awesome-openmage in the main repo's README file (and in the openmage.org website) for easy finding.
+4. Link the awesome-openmage in the main awesome repository at https://github.com/sindresorhus/awesome
