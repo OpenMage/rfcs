@@ -19,25 +19,31 @@ With this RFC we will define a basic scheme with rules by which we will do relea
 
 {{Discuss 2-3 different alternative solutions that were considered. This is required, even if it seems like a stretch. Then explain why this is the best choice out of available ones.}}
 
-### Alternative 1.1
+### Alternative 1
 
-We will follow the Example of nginx.
-We will have two parallel Versions/Branches, *stable* and *mainline*, with new Major Releases every year.
-mainline will contain all the latest changes and additions, while stable is each year branched from mainline, and then only gets bugfix releases.
+- All new PRs are based on "main" branch (resolves confusion about where to submit PRs)
+- Release timing is flexible (determined by volunteer time availability/motivation) but ideally no more than 1 MAJOR release per year
+- Feature releases must be either MINOR or MAJOR as determined by PRs being merged (tag PRs that should result in major release with "MAJOR")
+- Only significant security patches or regression fixes can be released immediately in a PATCH release
+- PATCH fixes will *only* be back-ported to MAJOR versions that are less than 2 years (730 days) old
+- Old major releases get their own branch only for the purpose of back-porting PATCH fixes (v19, v20, v21, etc)  
 
+#### Example
 
-#### Visualization of the nginx Release cycle
+As of now the current releases are 19.4.21 and 20.0.18. The next release containing only MINOR features would be 20.1.0, then 20.2.0
+until a MAJOR feature is released so 21.0.0 and so forth. If there is then a security patch it would be released for the latest version
+(e.g. 21.0.1) and only backported to 20.2.1 (via a branch called v20) and 19.4.22 (via a branch called v19) in this case
+if those branches were less than two years old at the time.
 
-![nginx release stragey visualized](../assets/nginx-release-strategy.png?raw=true "nginx release stragey visualized")
+#### Effects
 
-### Alternative 1.2
-
-An additional *legazy* release branch, which provides support for the previous stable branch for ~1 more year.
-
-
-### Alternative 1.3
-
-same as previous ones, but with a different timeframe instead of a year. (not clearly defined yet)
+- Relegates v19 to security-only going forward and it basically becomes EOL in 2 years.
+- All new releases are at least minor versions so it is understood there is basically always a small upgrade risk. This resolves 
+  the common issue where a feature is BC breaking but in a very small way - this is always acceptable.
+- The "which branch?" debate is resolved because all PRs go to "main" which is also indefinitely the default checkout branch.
+- Bleeding-edge users and can easily use "dev-main" indefinitely.
+- Active users can upgrade as new releases are announced using the major/minor numbers as guidance.
+- Users wanting minimal upgrade hassle always have at least 2 years to get up to date to the latest major version for another two years or more.
 
 ### Alternative 2
 
