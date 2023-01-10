@@ -58,16 +58,7 @@ But we will go with just one Major Release each year, which results in one LTS R
 
 #### Visualization of the Ubuntu Release cycle
 
-![ubuntu release stragey visualized](../assets/Ubuntu_release_cycle_Ubuntu.png?raw=true "ubuntu release stragey visualized")
-
-### Alternative 3.1
-
-Have one Minor Release each month, do Major Releases every time a BC break is part of the Release. Only one currently supported Branch.
-
-### Alternative 3.2
-
-Have one Minor Release every Quarter
-
+![ubuntu release stragey visualized](https://github.com/OpenMage/rfcs/raw/main/assets/Ubuntu_release_cycle_Ubuntu.png?raw=true "ubuntu release strategy visualized")
 
 ## Implementation
 
