@@ -22,11 +22,12 @@ With this RFC we will define a basic scheme with rules by which we will do relea
 ### Alternative 1
 
 - All new PRs are based on "main" branch (resolves confusion about where to submit PRs)
-- Release timing is flexible (determined by volunteer time availability/motivation) but ideally no more than 1 MAJOR release per year
+- Release timing is flexible (determined by volunteer time availability/motivation) but ideally no more than 1 MAJOR release per year and roughly one MINOR release per month
+  - This may require timing the merging of multiple MAJOR features or using a temporary branch to prepare a MAJOR release
 - Feature releases must be either MINOR or MAJOR as determined by PRs being merged (tag PRs that should result in major release with "MAJOR")
 - Only significant security patches or regression fixes can be released immediately in a PATCH release
 - PATCH fixes will *only* be back-ported to MAJOR versions that are less than 2 years (730 days) old
-- Old major releases get their own branch only for the purpose of back-porting PATCH fixes (v19, v20, v21, etc)  
+- Old major releases get their own branch only for the purpose of back-porting PATCH fixes (v19, v20, v21, etc)
 
 #### Example
 
@@ -41,7 +42,8 @@ if those branches were less than two years old at the time.
 - All new releases are at least minor versions so it is understood there is basically always a small upgrade risk. This resolves 
   the common issue where a feature is BC breaking but in a very small way - this is always acceptable.
 - The "which branch?" debate is resolved because all PRs go to "main" which is also indefinitely the default checkout branch.
-- Bleeding-edge users and can easily use "dev-main" indefinitely.
+- Minor releases are as easy as tagging the latest "main" with a new release number. 
+- Bleeding-edge users and can easily use "dev-main" via composer indefinitely.
 - Active users can upgrade as new releases are announced using the major/minor numbers as guidance.
 - Users wanting minimal upgrade hassle always have at least 2 years to get up to date to the latest major version for another two years or more.
 
@@ -69,16 +71,12 @@ Have one Minor Release every Quarter
 
 ## Implementation
 
-{{Give a high-level overview of implementation requirements and concerns. Be specific about areas of code that need to change, and what their potential effects are. Discuss which repositories and sub-components will be affected, and what its overall code effect might be.}}
-
-{{THIS SECTION IS REQUIRED FOR RATIFICATION -- you can skip it if you don't know the technical details when first submitting the proposal, but it must be there before it's accepted}}
-
-## Prior Art
-
-
-{{This section is optional if there are no actual prior examples in other tools}}
-
-{{Discuss existing examples of this change in other tools, and how they've addressed various concerns discussed above, and what the effect of those decisions has been}}
+- Vote on the alternatives above and choose the winner
+- Designate the appropriate "default" branch in GitHub admin
+- Rename and/or delete inactive branches as necessary (perhaps after some time after an announcement in case they are being actively used)
+- Update all existing PRs to the appropriate branch (can be done gradually)
+- Codify the strategy into the main project `README.md` file
+- Announce new release strategy in a blog post
 
 ## Unresolved Questions and Bikeshedding
 
