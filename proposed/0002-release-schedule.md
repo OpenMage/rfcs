@@ -6,18 +6,14 @@ Defining the Schedule and rules for new releases
 
 ## Motivation
 
-Its important to have a reliability for long term plans, we can offer this by following a consistent schedule with hard rules.
+It's important to have a reliability for long term plans, we can offer this by following a consistent schedule with hard rules.
 Different People/Users have different needs. This RFC allows to find a middleground, which satisfies all of our users, but also will show us, what our users actually need and want, providing a base for a decision which will be seen as good enough to not need a bigger change for at least a few years.
 With this RFC we then also have something to reference in case of future arguments about Releases and what gets into them.
 
 ## Detailed Explanation
 
-With this RFC we will define a basic scheme with rules by which we will do releases, have and create release branches, and also by which we decide what kind of changes get when merged into which release branch.
-
-## Rationale and Alternatives
-
-
-{{Discuss 2-3 different alternative solutions that were considered. This is required, even if it seems like a stretch. Then explain why this is the best choice out of available ones.}}
+With this RFC we will define a basic scheme with rules by which we will do releases, have and create release branches,
+and also by which we decide what kind of changes get when merged into which release branch.
 
 ### Alternative 1
 
@@ -37,6 +33,8 @@ Versioning follows semver.org with these tailored definitions:
 - PATCH version when you make backwards compatible bug fixes
   - best case: fix has zero negative impact
   - worst case: security fix is urgent enough to justify potentially breaking user's stores in a small way (e.g. improving malicious string filtering)
+  - functionality: if it doesn't fix a significant regression, it doesn't get a PATCH
+  - security/stability: if it doesn't warrant a CVE, it doesn't get a PATCH
 
 Given the above, the rules for creating PRs, merging, branching and tagging releases shall be as follows:
 
@@ -105,9 +103,10 @@ But we will go with just one Major Release each year, which results in one LTS R
 ## Implementation
 
 - Vote on the alternatives above and choose the winner
-- Designate the appropriate "default" branch in GitHub admin
+- Designate the appropriate "default" branch in GitHub admin as per the winning strategy
 - Rename and/or delete inactive branches as necessary (perhaps after some time after an announcement in case they are being actively used)
 - Update all existing PRs to the appropriate branch (can be done gradually)
+- Lock old branches (1.9.4.x and 20.0) to avoid accidental merges if possible.
 - Codify the strategy into the main project `README.md` file
 - Announce new release strategy in a blog post
 
