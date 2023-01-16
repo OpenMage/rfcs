@@ -65,6 +65,10 @@ Given the above, the rules for creating PRs, merging, branching and tagging rele
 - PATCH fixes will *only* be back-ported to MAJOR versions that are less than 2 years (730 days) old - this is the sole
   purpose of the "v*" branches
   - Backporting to old releases can be done by a maintainer directly on the appropriate branches or by the community via a PR
+  - The maintenance branches (v19, v20, etc.) may be deleted by any maintainer after they are no longer eligible to receive
+    PATCH updates - users should be discouraged from using these branches in production (e.g. `"dev-v19"`) - there is no reason
+    to do this because they can just use `"^19"` to always get the latest from the v19 branch until it is EOL at which point
+    they must update to a newer MAJOR version
 
 The "next" branch serves as a pre-release area for MAJOR changes in case there should be multiple MAJOR changes merged in
 a short period while allowing "main" to continue to be "stable" for users wanting only the latest MINOR updates. It is
