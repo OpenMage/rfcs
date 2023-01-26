@@ -2,22 +2,24 @@
 
 ## Summary
 
-Defining the Schedule and rules for new releases
+Defining the Schedule and rules for new releases and management of branches
 
 ## Motivation
 
-It's important to have a reliability for long term plans, we can offer this by following a consistent schedule with hard rules.
-Different People/Users have different needs. This RFC allows to find a middleground, which satisfies all of our users, but also will show us, what our users actually need and want, providing a base for a decision which will be seen as good enough to not need a bigger change for at least a few years.
-With this RFC we then also have something to reference in case of future arguments about Releases and what gets into them.
+It's important to have clearly defined and sustainable long-term plans for both end-users and maintainers.
+Different People/Users have different needs as it relates to stability and new features which are competing goals.
+This RFC aims to find a suitable compromise which satisfies all of our users, but also will show us what our users
+actually need and want. With this RFC we then also have something for devleopers to reference when contributing and
+to resolve disagreements about Releases, timing and what gets into them.
 
 ## Detailed Explanation
 
-With this RFC we will define a basic scheme with rules by which we will do releases, have and create release branches,
-and also by which we decide what kind of changes get when merged into which release branch.
+With this RFC we will define terminology for semantic versioning and rules by which we will build new releases and
+manage repo branches and guidelines by which we decide what kind of changes get when merged into which release branch.
 
-### Alternative 1
+### Terminology
 
-Versioning follows semver.org with these tailored definitions:
+Versioning shall follow semver.org guidelines with these tailored definitions:
 
 - MAJOR version when you make incompatible API changes
   - public methods with changed signatures (e.g. new required parameter)
@@ -36,7 +38,9 @@ Versioning follows semver.org with these tailored definitions:
   - functionality: if it doesn't fix a significant regression, it doesn't get a PATCH
   - security/stability: if it doesn't warrant a CVE, it doesn't get a PATCH
 
-Given the above, the rules for creating PRs, merging, branching and tagging releases shall be as follows:
+### Rules
+
+Given the definitions above, the rules for creating PRs, merging, branching and tagging releases shall be as follows:
 
 - Release timing is flexible (determined by volunteer time availability/motivation/activity) but ideally:
   - roughly 6-12 MINOR releases per year
@@ -81,7 +85,7 @@ until a MAJOR feature is released so 21.0.0 and so forth. If there is then a sec
 and released for the latest version (e.g. 21.0.1) and only backported to 20.2.1 (via a branch called v20) and 19.4.22 (via a branch called v19) in this case
 if those branches were less than two years old at the time.
 
-#### Effects
+### Effects
 
 - Relegates v19 to PATCH-only going forward and v19 basically becomes EOL in 2 years.
 - All new releases are at least MINOR versions so it is understood there is basically always a small upgrade risk. This resolves 
@@ -91,31 +95,16 @@ if those branches were less than two years old at the time.
 - Active users of tagged releases can upgrade as new releases are announced using the major/minor numbers as guidance as per semver standards.
 - Users wanting minimal upgrade hassle always have at least 2 years to get up to date to the latest major version for another two years or more.
 
-### Alternative 2
-
-We will follow the example of Ubuntu, which bases the Major Version Number on the Year.  
-And also has a specific Rythmus of an LTS version every 4 Releases,
-adding bigger experimantal features in the Major Release after an LTS version.
-
-But we will go with just one Major Release each year, which results in one LTS Release every 4 years.
-
-
-#### Visualization of the Ubuntu Release cycle
-
-![ubuntu release stragey visualized](https://github.com/OpenMage/rfcs/raw/main/assets/Ubuntu_release_cycle_Ubuntu.png?raw=true "ubuntu release strategy visualized")
-
 ## Implementation
 
-- Vote on the alternatives above and choose the winner
-- Designate the appropriate "default" branch in GitHub admin as per the winning strategy
-- Rename and/or delete inactive branches as necessary (perhaps after some time after an announcement in case they are being actively used)
-- Update all existing PRs to the appropriate branch (can be done gradually)
-- Lock old branches (1.9.4.x and 20.0) to avoid accidental merges if possible.
-- Codify the strategy into the main project `README.md` file
+- Create a "main" branch from "20.0" and designate it as the "default" branch in GitHub admin
+- Create a "next" branch that is a copy of "main"
+- Create a "v19" branch from "1.9.4.x"
+- Create a "v20" branch from "20.0"
+- Add branch protection rules for "main", "next", and "^v\d+$"
+- Add branch protection rule to lock old branches ("1.9.4.x" and "20.0") to avoid accidental merges
+- Delete branches "19.4.22" and "20.0.19"
+- Codify the strategy into the main project `README.md` file using the descriptions above
 - Announce new release strategy in a blog post
-
-## Unresolved Questions and Bikeshedding
-
-{{Write about any arbitrary decisions that need to be made (syntax, colors, formatting, minor UX decisions), and any questions for the proposal that have not been answered.}}
-
-{{THIS SECTION SHOULD BE REMOVED BEFORE RATIFICATION}}
+- Update all existing PRs to the appropriate branch (can be done gradually - enlist the help of community members)
+- Delete "1.9.4.x" and "20.0" once there are no more PRs dependent on them (or will PRs just default to "main"?)
