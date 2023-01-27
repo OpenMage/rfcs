@@ -103,7 +103,6 @@ if those branches were less than two years old at the time.
 - Create a "v20" branch from "20.0"
 - Add branch protection rules for "main", "next", and "^v\d+$"
 - Add branch protection rule to lock old branches ("1.9.4.x" and "20.0") to avoid accidental merges
-- Delete branches "19.4.22" and "20.0.19"
 - Codify the strategy into the main project `README.md` file using the descriptions above
 - Announce new release strategy in a blog post
 - Update all existing PRs to the appropriate branch (can be done gradually - enlist the help of community members)
