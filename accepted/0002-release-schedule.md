@@ -107,3 +107,23 @@ if those branches were less than two years old at the time.
 - Announce new release strategy in a blog post
 - Update all existing PRs to the appropriate branch (can be done gradually - enlist the help of community members)
 - Delete "1.9.4.x" and "20.0" once there are no more PRs dependent on them (or will PRs just default to "main"?)
+
+
+## Notes
+
+Accepted via voting on https://github.com/OpenMage/rfcs/pull/10
+
+
+| **Name**         | **Yes** | **No** |
+|------------------|:-------:|:------:|
+| fballiano        | ✔️      |        |
+| colinmollenhour  | ✔️      |        |
+| justinbeaty      | ✔️      |        |
+| ADDISON74        | ✔️      |        |
+| elidrissidev     | ✔️      |        |
+| kiatng           | ✔️      |        |
+| FredericMartinez | ✔️      |
+| barbanet         | ✔️      |        |
+| orsifrancesco    | ✔️      |        |
+| MGAndreasen      | ✔️      |        |
+| clotted          | ✔️      |        |
