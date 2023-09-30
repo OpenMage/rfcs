@@ -28,9 +28,10 @@ We use the `/.github/FUNDING.yml` file documented at https://docs.github.com/en/
 It is allowed for anyone to be added to who did contribute at least on 4 different months during the last 2 years.
 Any kind of contribution does count, including "documentation, website content, code reviews, patches" and also every not here specyfied contribution. 
 
-{{Give a high-level overview of implementation requirements and concerns. Be specific about areas of code that need to change, and what their potential effects are. Discuss which repositories and sub-components will be affected, and what its overall code effect might be.}}
 
-{{THIS SECTION IS REQUIRED FOR RATIFICATION -- you can skip it if you don't know the technical details when first submitting the proposal, but it must be there before it's accepted}}
+At the moment when OpenMage has their own Organisation level Sponsoring, all individual sponsoring links which are covered by this RFCs are going to get removed. (They might qualify for returning, in case the organizational sponsoring is closed again).
+
+Violations against the Code of Conduct can involve removal as well as banning from beeing listed for Sponsoring.
 
 ## Prior Art
 
