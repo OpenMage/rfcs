@@ -25,13 +25,15 @@ Versioning shall follow semver.org guidelines with these tailored definitions:
   - public methods with changed signatures (e.g. new required parameter)
   - removed code that may still be used by some (e.g. unused lib/Zend code or IE8 compat)
   - rename things that could affect users (e.g. xml namespace)
-  - dependencies updated in major ways (e.g. dropping support of PHP 7.4 or MySQL 5.6)
+  - dependencies updated in major ways (e.g. dropping support of MySQL 5.6)
+    - PHP engine requirements are an exception to this rule if they are effectively enforced by Composer.
 - MINOR version when you add functionality in a backwards compatible manner
   - changed code that is very unlikely to have any effect on large majority of users although not guaranteed
   - typical usage is not expected to be affected, only if user was not following best practices
   - no regressions foreseen, but there is always a risk a new feature affects some in unexpected ways
   - performance/stability is improved significantly with little or no negative impacts expected
   - dependencies updated to fix bugs or bring in minor improvements
+    - PHP engine requirement changes must be reflected correctly in composer.json so that Composer can select the correct OpenMage version depending on the user's platform
 - PATCH version when you make backwards compatible bug fixes
   - best case: fix has zero negative impact
   - worst case: security fix is urgent enough to justify potentially breaking user's stores in a small way (e.g. improving malicious string filtering)
